@@ -1,0 +1,35 @@
+<h1>
+  My Todos
+</h1>
+<div class="container">
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Description</th>
+          <th>Target Date</th>
+          <th>Done</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let todo of todos'>
+          <td>{{todo.id}}</td>
+          <td>{{todo.description}}</td>
+          <td>{{todo.targetDate | date}}</td>
+          <td>{{todo.done}}</td>
+          <td><button (click)="updateTodo(todo.id)" class="btn btn-success">Update</button><span></span><button (click)="deleteTodo(todo.id)" class="btn btn-warning">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="row">
+      <button (click)="createTodo()" class="btn btn-success">Create New</button>
+    </div>
+  </div>
+
+  <div class="alert alert-warning" *ngIf = 'requestFail'>{{message}}</div>
+
+</div>
+

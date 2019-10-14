@@ -1,0 +1,16 @@
+<header>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+		<div><a href="" class="navbar-brand">House of Dev</a></div>
+
+		<ul class="navbar-nav">
+			<li *ngIf='this.hardcodedAuthenticationService.isUserLoggedIn()'><a routerLink="/welcome/tichkames" class="nav-link">Home</a></li>
+			<li *ngIf='this.hardcodedAuthenticationService.isUserLoggedIn()'><a routerLink="/todos" class="nav-link">Todos</a></li>
+		</ul>
+
+		<ul class="navbar-nav navbar-collapse justify-content-end">
+			<li *ngIf='this.hardcodedAuthenticationService.isUserLoggedIn() === false'><a routerLink="/login" class="nav-link">Login</a></li>
+			<li *ngIf='this.hardcodedAuthenticationService.isUserLoggedIn()'><a routerLink="/logout" class="nav-link">Logout</a></li>
+		</ul>
+	</nav>
+</header>
