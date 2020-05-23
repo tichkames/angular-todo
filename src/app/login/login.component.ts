@@ -11,7 +11,7 @@ import { BasicAuthenticationService } from '../service/basic-authentication.serv
 export class LoginComponent implements OnInit {
 
   username = 'tichkames'
-  password = ''
+  password = 'tichkames'
   errorMessage = "Invalid Login"
   invalidLogin = false
 
